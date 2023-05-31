@@ -1,0 +1,338 @@
+$url: "https://uploads.codesandbox.io/uploads/user/ae01acfa-884f-4c6b-bb26-4837d669a24e/";
+$fontName: "FjallaOne-Regular";
+$bgColorPlayer: #fffaee;
+$borderColor: orange;
+$colorButton: #f26600;
+$bgColorButton: white;
+$colorButtonHover: white;
+$bgColorButtonHover: #f26600;
+$errorColor: rgb(223, 1, 1);
+$errorBgColor: rgb(250, 223, 223);
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: $fontName;
+  margin: 1rem;
+  align-items: center;
+}
+
+.first {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: $fontName;
+  margin: 0 1rem;
+  align-items: center;
+  min-height: 120px;
+}
+
+@mixin declare-font-face($url, $fontName) {
+  @font-face {
+    font-family: $fontName;
+    src: url($url + "yMNI-FjallaOne-Regular.woff ") format("woff"),
+      url($url + "olas-FjallaOne-Regular.eot"),
+      url($url + "olas-FjallaOne-Regular.eot?#iefix") format("embedded-opentype"),
+      url($url + "FymT-FjallaOne-Regular.ttf") format("truetype");
+    font-weight: 100 299;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@include declare-font-face($url, $fontName);
+
+#player {
+  border: 1px solid $borderColor;
+  width: 500px;
+  min-width: 500px;
+  min-height: 300px;
+  border-radius: 24px;
+  background: $bgColorPlayer;
+}
+
+.button {
+  border: 1px solid $colorButton;
+  color: $colorButton;
+  border-radius: 100%;
+  margin: 1rem;
+  background-color: $bgColorButton;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 2.5rem;
+  min-height: 74px;
+  min-width: 74px;
+}
+
+.loading:hover {
+  background-color: $bgColorButton !important;
+  cursor: initial !important;
+}
+
+.button svg {
+  margin: 1rem;
+}
+
+.button svg[data-icon="play"] {
+  margin: 1rem 1rem 1rem 1.5rem;
+}
+
+.button:hover {
+  background-color: $bgColorButtonHover;
+  color: $colorButtonHover;
+  cursor: pointer;
+}
+
+.radio {
+  border: 1px solid $borderColor;
+  width: 180px;
+  height: 70px;
+  border-radius: 0.3rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.timer {
+  min-width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: $colorButton;
+  background-color: $bgColorButton;
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  border: 1px solid $borderColor;
+  border-radius: 5px;
+}
+
+.timer span {
+  display: block;
+  width: 30px;
+}
+
+.timer span:nth-child(2),
+.timer span:nth-child(4) {
+  display: block;
+  width: 15px;
+  margin: 0 0.2rem 0 0.3rem;
+  text-align: center;
+}
+
+.radio-list span {
+  cursor: pointer;
+  text-align: left;
+  display: block;
+}
+
+.radio-list {
+  margin: 1rem;
+  min-width: 182px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
+}
+
+.radio-list-off span {
+  color: gray;
+  cursor: initial;
+}
+
+.radio-list-off {
+  cursor: initial;
+  filter: grayscale(100%);
+}
+
+.radio-container {
+  margin: 0.5rem 0 0.5rem 0;
+  background-color: $bgColorButton;
+  border-radius: 5px;
+  border: 1px solid $borderColor;
+  padding: 0.5rem;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.radio-list img {
+  width: 3.5rem;
+  margin-right: 1rem;
+}
+
+.radio-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: $colorButton;
+}
+
+.radio-name span {
+  margin: 0;
+}
+
+.radio-infos {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.radio-infos span {
+  display: block;
+}
+
+.radio-infos span:nth-child(2) {
+  margin-left: 0.5rem;
+}
+
+.radio-infos span:nth-child(3) {
+  margin-left: 0.5rem;
+}
+
+.audio-volume {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
+  margin-right: 3rem;
+}
+
+.audio-volume span {
+  display: block;
+  padding-bottom: 0.3rem;
+  margin-right: 0.5rem;
+}
+
+.volume {
+  margin-right: 0.5rem;
+}
+
+/********** Range Input Styles **********/
+/*Range Reset*/
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+  outline: none;
+}
+
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: $borderColor;
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -12px; /* Centers thumb on the track */
+
+  /*custom styles*/
+  background-color:  $colorButton;
+  height: 2rem;
+  width: 1rem;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  border: 1px solid $colorButton;
+  outline: 3px solid $colorButton;
+  outline-offset: 0.125rem;
+}
+
+/******** Firefox styles ********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+  background-color: $borderColor;
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0; /*Removes default border-radius that FF applies*/
+
+  /*custom styles*/
+  background-color: $colorButton;
+  height: 2rem;
+  width: 1rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  border: 1px solid $colorButton;
+  outline: 3px solid $colorButton;
+  outline-offset: 0.125rem;
+}
+
+/* Dot pulse */
+.spinner {
+  margin: 0 0 13px 5px;
+  width: 64px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: $colorButton;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.error {
+  background-color: $errorBgColor;
+  color: $errorColor;
+  border: 1px solid $errorColor;
+  padding: 1rem;
+  margin: 0.5rem;
+  text-align: center;
+}

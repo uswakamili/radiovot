@@ -1,0 +1,57 @@
+[
+  {
+    "id": 0,
+    "name": "back to the 80's",
+    "country": "united states",
+    "state": "florida",
+    "city": "palm coast",
+    "style": ["dance", "oldies", "80s"],
+    "url": "http://s1.nexuscast.com:8135/;;audio.mp3",
+    "logo": "back-to-80.jpg",
+    "flag": "NZ-Q-USA.png"
+  },
+  {
+    "id": 1,
+    "name": "american road",
+    "country": "united states",
+    "state": "california",
+    "city": "los angeles",
+    "style": ["rock", "blue", "country"],
+    "url": "https://c5.radioboss.fm:18224/stream",
+    "logo": "american-road.jpg",
+    "flag": "NZ-Q-USA.png"
+  },
+  {
+    "id": 2,
+    "name": "lounge fm",
+    "country": "ukraine",
+    "state": "kiev oblast",
+    "city": "kiev",
+    "style": ["lounge"],
+    "url": "http://cast.loungefm.com.ua/terrace128?1410329080738.mp3",
+    "logo": "ufAQ-loungefm.jpg",
+    "flag": "Lxmv-ukraine.png"
+  },
+  {
+    "id": 3,
+    "name": "wave 80",
+    "country": "canada",
+    "state": "ontario",
+    "city": "toronto",
+    "style": ["dance", "80s", "oldies"],
+    "url": "https://maggie.torontocast.com:2020/stream/wave-80/stream.mp3",
+    "logo": "wave80.jpg",
+    "flag": "aBIS-canada.png"
+  },
+  {
+    "id": 4,
+    "name": "101 smooth jazz",
+    "country": "united states",
+    "state": "california",
+    "city": "los angeles",
+    "style": ["jazz"],
+    "url": "https://jking.cdnstream1.com/b22139_128mp3",
+    "logo": "101-smooth-jazz.jpg",
+    "flag": "NZ-Q-USA.png"
+  }
+]
